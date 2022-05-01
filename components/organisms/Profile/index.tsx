@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Image, ImageContainer } from "./styles";
+import { Container, CustomImage, ImageContainer } from "./styles";
 
 interface Props {
   imageUrl: string;
@@ -17,7 +17,7 @@ const Profile: React.FC<Props> = ({
   return (
     <Container>
       <ImageContainer>
-        <Image src={imageUrl} alt="Abel Dutra" />
+        <CustomImage src={imageUrl} alt="Abel Dutra" />
       </ImageContainer>
       <div
         style={{ display: "flex", flexDirection: "column", marginBlock: 50 }}

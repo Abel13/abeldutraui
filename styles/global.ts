@@ -18,6 +18,7 @@ export default createGlobalStyle`
 
     a {
         color: ${colors.secondary};
+        text-decoration: none;
     }
 
     span {
@@ -32,6 +33,7 @@ export default createGlobalStyle`
     h1, h2, h3, h4, h5, h6, strong {
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-weight: 300;
+        font-size: 1.5rem;
         color: ${colors.primary};
     }
 

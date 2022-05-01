@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { colors } from "../../../styles/colors";
 
@@ -21,8 +22,9 @@ export const ImageContainer = styled.div`
     0 0 10px ${colors.secondary}, 0 0 15px ${colors.secondary}; */
 `;
 
-export const Image = styled.img`
-  width: 150px;
-  height: 150px;
+export const CustomImage = styled(Image).attrs({
+  width: 150,
+  height: 150,
+})`
   border-radius: 50%;
 `;
