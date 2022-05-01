@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "../../../lotties/comming-soon.json";
+import animationData from "../../../public/lotties/comming-soon.json";
 
 // import { Container } from './styles';
 

@@ -16,6 +16,10 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
+    a {
+        color: ${colors.secondary};
+    }
+
     span {
         white-space: pre-line;
     }
@@ -28,6 +32,7 @@ export default createGlobalStyle`
     h1, h2, h3, h4, h5, h6, strong {
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-weight: 300;
+        color: ${colors.primary};
     }
 
     button {

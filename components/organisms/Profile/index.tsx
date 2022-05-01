@@ -2,14 +2,22 @@ import React from "react";
 
 import { Container, Image, ImageContainer } from "./styles";
 
-const Profile: React.FC = () => {
+interface Props {
+  imageUrl: string;
+  gitProjects: number;
+  gitFollowers: number;
+  bio: string;
+}
+const Profile: React.FC<Props> = ({
+  imageUrl,
+  gitProjects,
+  gitFollowers,
+  bio,
+}) => {
   return (
     <Container>
       <ImageContainer>
-        <Image
-          src="https://avatars.githubusercontent.com/u/1572407?v=4"
-          alt="Abel Dutra"
-        />
+        <Image src={imageUrl} alt="Abel Dutra" />
       </ImageContainer>
       <div
         style={{ display: "flex", flexDirection: "column", marginBlock: 50 }}
@@ -20,27 +28,14 @@ const Profile: React.FC = () => {
             <b>10</b> years of experience
           </span>
           <span style={{ marginInline: 8 }}>
-            <b>77</b> projects on github
+            <b>{gitProjects}</b> projects
           </span>
           <span style={{ marginInline: 8 }}>
-            <b>3</b> published apps
-          </span>
-          <span style={{ marginInline: 8 }}>
-            <b>2</b> languages
+            <b>{gitFollowers}</b> followers
           </span>
         </div>
         <div>
-          <span>
-            {`
-            🌎 Brazil
-            📍 Manhuaçu - MG 👣 Londrina - PR
-            💼 Act Digital
-            🎓 UTFPR - Software Engineering
-            👶 1991
-            💜 You Tube - Abel Dutra UI
-            💉 Pfizer 3/3
-            `}
-          </span>
+          <span>{bio}</span>
         </div>
       </div>
     </Container>

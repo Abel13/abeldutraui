@@ -4,8 +4,8 @@ import { shade } from "polished";
 import { colors } from "../../../styles/colors";
 
 export const ScrollViewContainer = styled.div`
-  flex: 1;
   display: flex;
+  flex: 1;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
