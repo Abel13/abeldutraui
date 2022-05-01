@@ -4,11 +4,9 @@ import {
   FaGithub,
   FaGraduationCap,
   FaLanguage,
-  FaMailBulk,
   FaPhone,
   FaYoutube,
 } from "react-icons/fa";
-import { colors } from "../../../styles/colors";
 import { ScrollView, TabButton } from "../../atoms";
 import { Header } from "../../molecules";
 import { Experiences, Profile } from "../../organisms";

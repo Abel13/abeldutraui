@@ -6,11 +6,9 @@ import {
   RiLinkedinLine,
   RiYoutubeLine,
 } from "react-icons/ri";
-import { colors } from "../../../styles/colors";
 import { Container, Content } from "./styles";
 
 const Header: React.FC = () => {
-  const [active, setActive] = React.useState(false);
   return (
     <Container>
       <Content>
