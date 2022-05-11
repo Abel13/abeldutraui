@@ -8,7 +8,7 @@ const colors = {
   grayHard: "#414c50",
 
   light: "#e4edf8",
-  dark: "#2d383c",
+  dark: "#2c2a2c",
 
   success: "#269E26",
   danger: "#c53030",

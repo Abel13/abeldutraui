@@ -1,41 +1,75 @@
 import React from "react";
 
-import { Container, CustomImage, ImageContainer } from "./styles";
+import { Container, CustomImage, ImageContainer, Name } from "./styles";
+
+import "react-loading-skeleton/dist/skeleton.css";
+import { Skeleton } from "../../atoms";
 
 interface Props {
   imageUrl: string;
   gitProjects: number;
   gitFollowers: number;
   bio: string;
+  loading: boolean;
 }
 const Profile: React.FC<Props> = ({
   imageUrl,
   gitProjects,
   gitFollowers,
   bio,
+  loading,
 }) => {
   return (
     <Container>
       <ImageContainer>
-        <CustomImage src={imageUrl} alt="Abel Dutra" />
+        {imageUrl && !loading ? (
+          <CustomImage src={imageUrl} alt="Abel Dutra" />
+        ) : (
+          <Skeleton
+            height={150}
+            width={150}
+            containerClassName="avatar-skeleton"
+            circle
+          />
+        )}
       </ImageContainer>
       <div
         style={{ display: "flex", flexDirection: "column", marginBlock: 50 }}
       >
-        <span style={{ fontSize: 24 }}>Abel de Oliveira Dutra</span>
-        <div style={{ flexDirection: "row", marginBlock: 20 }}>
-          <span style={{ marginInline: 8 }}>
-            <b>10</b> years of experience
-          </span>
-          <span style={{ marginInline: 8 }}>
-            <b>{gitProjects}</b> projects
-          </span>
-          <span style={{ marginInline: 8 }}>
-            <b>{gitFollowers}</b> followers
-          </span>
+        <Name>
+          {loading ? <Skeleton width={256} /> : "Abel de Oliveira Dutra"}
+        </Name>
+        <div style={{ display: "flex", flexDirection: "row", marginBlock: 20 }}>
+          <div style={{ marginInlineEnd: 8 }}>
+            {loading ? (
+              <Skeleton width={80} inline />
+            ) : (
+              <span>
+                <b>10</b> years of experience
+              </span>
+            )}
+          </div>
+          <div style={{}}>
+            {loading ? (
+              <Skeleton width={80} inline />
+            ) : (
+              <span>
+                <b>{gitProjects}</b> projects
+              </span>
+            )}
+          </div>
+          <div style={{ marginInlineStart: 8 }}>
+            {loading ? (
+              <Skeleton width={80} inline />
+            ) : (
+              <span>
+                <b>{gitFollowers}</b> followers
+              </span>
+            )}
+          </div>
         </div>
         <div>
-          <span>{bio}</span>
+          <span>{bio || <Skeleton count={5} />}</span>
         </div>
       </div>
     </Container>

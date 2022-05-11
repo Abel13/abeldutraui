@@ -28,3 +28,7 @@ export const CustomImage = styled(Image).attrs({
 })`
   border-radius: 50%;
 `;
+
+export const Name = styled.span`
+  font-size: 24px;
+`;

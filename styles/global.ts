@@ -22,6 +22,7 @@ export default createGlobalStyle`
     }
 
     span {
+        font-size: 14px;
         white-space: pre-line;
     }
 
@@ -30,9 +31,16 @@ export default createGlobalStyle`
         font-size: 16px;
     }
 
-    h1, h2, h3, h4, h5, h6, strong {
+    h2 {
         font-family: 'Yanone Kaffeesatz', sans-serif;
         font-weight: 300;
+        font-size: 18px;
+        color: ${colors.white};
+    }
+
+    h1, h3, h4, h5, h6, strong {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight: 400;
         font-size: 1.5rem;
         color: ${colors.primary};
     }

@@ -25,7 +25,8 @@ interface Props {
 }
 const Layout: React.FC<Props> = ({ children }) => {
   const route = useRouter();
-  const [gitUser, setGitUser] = React.useState<IGitUser | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [gitUser, setGitUser] = React.useState<IGitUser>({} as IGitUser);
   const [tabs, setTabs] = useState([
     {
       href: "/",
@@ -72,8 +73,10 @@ const Layout: React.FC<Props> = ({ children }) => {
   const twitch = "https://www.twitch.tv/abeldutraui";
 
   const fetchGitUser = async () => {
+    setLoading(true);
     const response = await apiGit.get("/users/abel13");
     setGitUser(response.data);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -110,14 +113,15 @@ const Layout: React.FC<Props> = ({ children }) => {
         >
           <ContentContainer>
             <Content>
-              {gitUser && (
+              {
                 <Profile
+                  loading={loading}
                   imageUrl={gitUser.avatar_url}
                   gitFollowers={gitUser.followers}
                   gitProjects={gitUser.public_repos}
                   bio={gitUser.bio}
                 />
-              )}
+              }
               <NavigationContainer>
                 {tabs.map(({ href, Icon, active, label }) => {
                   return (

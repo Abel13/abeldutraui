@@ -23,8 +23,8 @@ export const Content = styled.div`
 `;
 
 export const NavigationContainer = styled.div`
-  display: flex;
   flex: 1;
+  display: flex;
   border-top: 1px solid ${colors.whiteTransparent};
   justify-content: center;
 `;
