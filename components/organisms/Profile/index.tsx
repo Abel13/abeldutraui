@@ -40,31 +40,43 @@ const Profile: React.FC<Props> = ({
           {loading ? <Skeleton width={256} /> : "Abel de Oliveira Dutra"}
         </Name>
         <div style={{ display: "flex", flexDirection: "row", marginBlock: 20 }}>
-          <div style={{ marginInlineEnd: 8 }}>
+          <div style={{}}>
             {loading ? (
               <Skeleton width={80} inline />
             ) : (
-              <span>
-                <b>10</b> years of experience
-              </span>
+              <a
+                href="https://www.linkedin.com/in/abeldutra/details/experience/"
+                target="blank"
+              >
+                <span>
+                  <b>10</b> years of experience
+                </span>
+              </a>
+            )}
+          </div>
+          <div style={{ marginInline: 10 }}>
+            {loading ? (
+              <Skeleton width={80} inline />
+            ) : (
+              <a
+                href="https://github.com/Abel13?tab=repositories"
+                target="blank"
+              >
+                <span>
+                  <b>{gitProjects}</b> projects
+                </span>
+              </a>
             )}
           </div>
           <div style={{}}>
             {loading ? (
               <Skeleton width={80} inline />
             ) : (
-              <span>
-                <b>{gitProjects}</b> projects
-              </span>
-            )}
-          </div>
-          <div style={{ marginInlineStart: 8 }}>
-            {loading ? (
-              <Skeleton width={80} inline />
-            ) : (
-              <span>
-                <b>{gitFollowers}</b> followers
-              </span>
+              <a href="https://github.com/Abel13?tab=followers" target="blank">
+                <span>
+                  <b>{gitFollowers}</b> followers
+                </span>
+              </a>
             )}
           </div>
         </div>
