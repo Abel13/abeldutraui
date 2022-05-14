@@ -66,12 +66,6 @@ const Layout: React.FC<Props> = ({ children }) => {
     },
   ]);
 
-  const github = "https://github.com/Abel13";
-  const youtube = "https://www.youtube.com/abeldutraui";
-  const linkedin = "https://www.linkedin.com/in/abeldutra/";
-  const instagram = "https://www.instagram.com/abeldutraui";
-  const twitch = "https://www.twitch.tv/abeldutraui";
-
   const fetchGitUser = async () => {
     setLoading(true);
     const response = await apiGit.get("/users/abel13");
@@ -96,13 +90,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <Container>
-      <Header
-        github={github}
-        linkedin={linkedin}
-        instagram={instagram}
-        twitch={twitch}
-        youtube={youtube}
-      />
+      <Header />
       <ScrollView>
         <div
           style={{

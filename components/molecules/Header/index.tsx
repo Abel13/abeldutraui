@@ -1,4 +1,5 @@
 import React from "react";
+import buyMeACoffee from "../../../public/images/bmc-logo.svg";
 
 import {
   RiGithubLine,
@@ -8,21 +9,18 @@ import {
   RiYoutubeLine,
 } from "react-icons/ri";
 import { Container, Content } from "./styles";
+import Image from "next/image";
+import { colors } from "../../../styles/colors";
 
-interface Props {
-  github: string;
-  youtube: string;
-  linkedin: string;
-  instagram: string;
-  twitch: string;
-}
-const Header: React.FC<Props> = ({
-  github,
-  instagram,
-  linkedin,
-  twitch,
-  youtube,
-}) => {
+interface Props {}
+const Header: React.FC<Props> = ({}) => {
+  const github = "https://github.com/Abel13";
+  const youtube = "https://www.youtube.com/abeldutraui";
+  const linkedin = "https://www.linkedin.com/in/abeldutra/";
+  const instagram = "https://www.instagram.com/abeldutraui";
+  const twitch = "https://www.twitch.tv/abeldutraui";
+  const bmc = "https://www.buymeacoffee.com/abeldutraui";
+
   return (
     <Container>
       <Content>
@@ -45,6 +43,10 @@ const Header: React.FC<Props> = ({
 
           <a href={twitch} target="blank">
             <RiTwitchLine style={{ marginInline: 8 }} size={24} />
+          </a>
+
+          <a href={bmc} target="blank">
+            <Image src={buyMeACoffee} height={24} width={24} alt="" />
           </a>
         </div>
       </Content>
