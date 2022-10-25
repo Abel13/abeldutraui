@@ -63,7 +63,7 @@ const Profile: React.FC<Props> = ({
                 target="blank"
               >
                 <span>
-                  <b>{gitProjects}</b> projects
+                  <b>{gitProjects}</b> repositories
                 </span>
               </a>
             )}
