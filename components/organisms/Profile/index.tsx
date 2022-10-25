@@ -42,7 +42,7 @@ const Profile: React.FC<Props> = ({
           {loading ? <Skeleton width={256} /> : "Abel de Oliveira Dutra"}
         </Name>
         <div style={{ display: "flex", flexDirection: "row", marginBlock: 20 }}>
-          <div style={{ marginInline: 10 }}>
+          <div style={{}}>
             {loading ? (
               <Skeleton width={80} inline />
             ) : (
@@ -56,7 +56,7 @@ const Profile: React.FC<Props> = ({
               </a>
             )}
           </div>
-          <div style={{}}>
+          <div style={{ marginInline: 10 }}>
             {loading ? (
               <Skeleton width={80} inline />
             ) : (
