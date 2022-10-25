@@ -106,6 +106,7 @@ const Layout: React.FC<Props> = ({ children }) => {
                   loading={loading}
                   imageUrl={gitUser.avatar_url}
                   gitFollowers={gitUser.followers}
+                  gitFollowing={gitUser.following}
                   gitProjects={gitUser.public_repos}
                   bio={gitUser.bio}
                 />

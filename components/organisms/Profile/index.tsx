@@ -9,6 +9,7 @@ interface Props {
   imageUrl: string;
   gitProjects: number;
   gitFollowers: number;
+  gitFollowing: number;
   bio: string;
   loading: boolean;
 }
@@ -16,6 +17,7 @@ const Profile: React.FC<Props> = ({
   imageUrl,
   gitProjects,
   gitFollowers,
+  gitFollowing,
   bio,
   loading,
 }) => {
@@ -40,20 +42,6 @@ const Profile: React.FC<Props> = ({
           {loading ? <Skeleton width={256} /> : "Abel de Oliveira Dutra"}
         </Name>
         <div style={{ display: "flex", flexDirection: "row", marginBlock: 20 }}>
-          <div style={{}}>
-            {loading ? (
-              <Skeleton width={80} inline />
-            ) : (
-              <a
-                href="https://www.linkedin.com/in/abeldutra/details/experience/"
-                target="blank"
-              >
-                <span>
-                  <b>10</b> years of experience
-                </span>
-              </a>
-            )}
-          </div>
           <div style={{ marginInline: 10 }}>
             {loading ? (
               <Skeleton width={80} inline />
@@ -75,6 +63,17 @@ const Profile: React.FC<Props> = ({
               <a href="https://github.com/Abel13?tab=followers" target="blank">
                 <span>
                   <b>{gitFollowers}</b> followers
+                </span>
+              </a>
+            )}
+          </div>
+          <div style={{}}>
+            {loading ? (
+              <Skeleton width={80} inline />
+            ) : (
+              <a href="https://github.com/Abel13?tab=following" target="blank">
+                <span>
+                  <b>{gitFollowing}</b> following
                 </span>
               </a>
             )}
