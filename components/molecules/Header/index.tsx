@@ -15,7 +15,7 @@ import { colors } from "../../../styles/colors";
 interface Props {}
 const Header: React.FC<Props> = ({}) => {
   const github = "https://github.com/Abel13";
-  const youtube = "https://www.youtube.com/abeldutraui";
+  const youtube = "https://www.youtube.com/@AbelDutraUI";
   const linkedin = "https://www.linkedin.com/in/abeldutra/";
   const instagram = "https://www.instagram.com/abel.o.dutra";
   const twitch = "https://www.twitch.tv/abeldutraui";
