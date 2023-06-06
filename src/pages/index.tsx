@@ -14,6 +14,7 @@ import {
   Tab,
 } from "@/styles/pages/home";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import { MouseEvent, MouseEventHandler } from "react";
 import { useCallback, useState } from "react";
 import {
@@ -117,6 +118,9 @@ export default function Home({
 
   return (
     <HomeContainer>
+      <Head>
+        <title>Abel Dutra UI</title>
+      </Head>
       <Header>
         <ImageContainer>
           <CustomImage
