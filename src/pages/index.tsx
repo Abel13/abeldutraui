@@ -14,7 +14,7 @@ import {
   Tab,
 } from "@/styles/pages/home";
 import { GetServerSideProps } from "next";
-import { MouseEventHandler } from "react";
+import { MouseEvent, MouseEventHandler } from "react";
 import { useCallback, useState } from "react";
 import {
   FaBriefcase,
@@ -81,17 +81,23 @@ export default function Home({
   ]);
 
   const changeTab = useCallback(
-    (event: MouseEventHandler<HTMLButtonElement>) => {
-      setTabs(
-        tabs.map((tab) => {
-          return {
-            ...tab,
-            active: event.target.innerText === tab.label,
-          };
-        })
-      );
+    (event: MouseEvent<HTMLButtonElement>) => {
+      const {
+        currentTarget: { textContent },
+      } = event;
 
-      setSelectedTab(event.target.innerText);
+      if (textContent) {
+        setTabs(
+          tabs.map((tab) => {
+            return {
+              ...tab,
+              active: textContent === tab.label,
+            };
+          })
+        );
+
+        setSelectedTab(textContent);
+      }
     },
     [tabs]
   );
