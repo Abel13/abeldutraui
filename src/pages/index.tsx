@@ -1,4 +1,5 @@
 import TabButton from "@/components/atoms/TabButton";
+import Contact from "@/components/templates/Contact";
 import Education from "@/components/templates/Education";
 import Experiences from "@/components/templates/Experiences";
 import Languages from "@/components/templates/Languages";
@@ -70,11 +71,6 @@ export default function Home({
       label: "GITHUB",
     },
     {
-      Icon: FaYoutube,
-      active: false,
-      label: "YOUTUBE",
-    },
-    {
       Icon: FaPhone,
       active: false,
       label: "CONTACT",
@@ -111,6 +107,8 @@ export default function Home({
         return <Education />;
       case "LANGUAGES":
         return <Languages />;
+      case "CONTACT":
+        return <Contact />;
       default:
         return <div />;
     }
@@ -133,7 +131,7 @@ export default function Home({
           />
         </ImageContainer>
         <div>
-          <Name>Abel de Oliveira Dutra</Name>
+          <Name>Abel O. Dutra</Name>
           <Numbers>
             <div>
               <a
