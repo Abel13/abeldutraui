@@ -9,7 +9,6 @@ import {
 import React from "react";
 
 interface ICardProps {
-  href?: string;
   title: string;
   subtitle: string;
   description?: string;

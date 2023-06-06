@@ -6,18 +6,11 @@ import { Container } from "@/styles/components/atoms/TabButton";
 import { theme } from "@/styles";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  href: string;
   active: boolean;
   children?: React.ReactNode;
   Icon: IconType;
 }
-const TabButton: React.FC<Props> = ({
-  Icon,
-  href,
-  active,
-  children,
-  onClick,
-}) => {
+const TabButton: React.FC<Props> = ({ Icon, active, children, onClick }) => {
   return (
     <Container
       style={{
