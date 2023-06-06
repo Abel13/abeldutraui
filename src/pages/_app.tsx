@@ -17,6 +17,12 @@ import Image from "next/image";
 import buyMeACoffee from "@/assets/bmc-logo.svg";
 
 globalStyles();
+const github = "https://github.com/Abel13";
+const youtube = "https://www.youtube.com/@AbelDutraUI";
+const linkedin = "https://www.linkedin.com/in/abeldutra/";
+const instagram = "https://www.instagram.com/abel.o.dutra";
+const twitch = "https://www.twitch.tv/abeldutraui";
+const bmc = "https://www.buymeacoffee.com/abeldutraui";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -25,26 +31,26 @@ export default function App({ Component, pageProps }: AppProps) {
         <Title>
           <h1>ABEL DUTRA UI</h1>
           <div>
-            <a href={"github"} target="blank">
+            <a href={github} target="blank">
               <RiGithubLine style={{ marginInline: 8 }} size={24} />
             </a>
-            <a href={"youtube"} target="blank">
+            <a href={youtube} target="blank">
               <RiYoutubeLine style={{ marginInline: 8 }} size={24} />
             </a>
 
-            <a href={"linkedin"} target="blank">
+            <a href={linkedin} target="blank">
               <RiLinkedinLine style={{ marginInline: 8 }} size={24} />
             </a>
 
-            <a href={"instagram"} target="blank">
+            <a href={instagram} target="blank">
               <RiInstagramLine style={{ marginInline: 8 }} size={24} />
             </a>
 
-            <a href={"twitch"} target="blank">
+            <a href={twitch} target="blank">
               <RiTwitchLine style={{ marginInline: 8 }} size={24} />
             </a>
 
-            <a href={"bmc"} target="blank">
+            <a href={bmc} target="blank">
               <Image src={buyMeACoffee} height={22} width={30} alt="" />
             </a>
           </div>
