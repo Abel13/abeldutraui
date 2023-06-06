@@ -39,7 +39,7 @@ export const Tab = styled("div", {
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  gap: "20px",
+  gap: "40px",
   borderTop: "1px solid $whiteTransparent",
 });
 
