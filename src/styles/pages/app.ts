@@ -59,6 +59,7 @@ export const TitleContainer = styled("div", {
   justifyContent: "center",
   backgroundColor: "$inputs",
   animation: `${breatheAnimation} 2s linear infinite`,
+  zIndex: 1,
 });
 
 export const ContentContainer = styled("div", {

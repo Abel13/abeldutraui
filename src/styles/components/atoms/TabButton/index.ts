@@ -9,7 +9,7 @@ export const Container = styled("button", {
   border: "none",
   fontSize: "12px",
   paddingBlock: "15px",
-  margin: "0 30px",
+  paddingInline: "20px",
   marginTop: "-1px",
   backgroundColor: "$transparent",
   color: "$gray",

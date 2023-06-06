@@ -1,4 +1,5 @@
 import TabButton from "@/components/atoms/TabButton";
+import Contact from "@/components/templates/Contact";
 import Education from "@/components/templates/Education";
 import Experiences from "@/components/templates/Experiences";
 import Languages from "@/components/templates/Languages";
@@ -14,6 +15,7 @@ import {
   Tab,
 } from "@/styles/pages/home";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import { MouseEvent, MouseEventHandler } from "react";
 import { useCallback, useState } from "react";
 import {
@@ -69,11 +71,6 @@ export default function Home({
       label: "GITHUB",
     },
     {
-      Icon: FaYoutube,
-      active: false,
-      label: "YOUTUBE",
-    },
-    {
       Icon: FaPhone,
       active: false,
       label: "CONTACT",
@@ -110,6 +107,8 @@ export default function Home({
         return <Education />;
       case "LANGUAGES":
         return <Languages />;
+      case "CONTACT":
+        return <Contact />;
       default:
         return <div />;
     }
@@ -117,6 +116,9 @@ export default function Home({
 
   return (
     <HomeContainer>
+      <Head>
+        <title>Abel Dutra UI</title>
+      </Head>
       <Header>
         <ImageContainer>
           <CustomImage
@@ -129,7 +131,7 @@ export default function Home({
           />
         </ImageContainer>
         <div>
-          <Name>Abel de Oliveira Dutra</Name>
+          <Name>Abel O. Dutra</Name>
           <Numbers>
             <div>
               <a
