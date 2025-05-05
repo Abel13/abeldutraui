@@ -6,7 +6,8 @@ export default function HeroSection() {
     <section className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-12 lg:mr-28 py-16 text-white">
       <div className="max-w-3xl text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold leading-tight">
-          Hi, I'm Abel – <br />
+          {"Hi, I'm Abel – "}
+          <br />
           <span>Software Engineer</span> & <span>Creative Coder</span>
         </h1>
 
