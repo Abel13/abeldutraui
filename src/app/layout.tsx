@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
-import { Raleway, Yanone_Kaffeesatz } from "next/font/google";
+import { inter, poppins } from "./fonts";
 import "./globals.css";
-
-const raleway = Raleway({ subsets: ["latin"] });
-const yanoneKaffeesatz = Yanone_Kaffeesatz({ subsets: ["latin"] });
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Abel Dutra UI",
-  description: "Personal website of Abel Dutra",
+  description: "Software Engineer",
 };
 
 export default function RootLayout({
@@ -16,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={yanoneKaffeesatz.className}>
-      <body className={raleway.className}>{children}</body>
+    <html lang="en">
+      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
