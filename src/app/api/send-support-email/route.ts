@@ -6,9 +6,7 @@ const EMAIL_PASS = process.env.EMAIL_PASS;
 const SUPPORT_EMAIL = "contac@abeldutraui.me";
 
 if (!EMAIL_USER || !EMAIL_PASS) {
-  throw new Error(
-    "As variáveis EMAIL_USER e EMAIL_PASS não estão configuradas."
-  );
+  throw new Error("As variáveis de ambiente não estão configuradas.");
 }
 
 export async function POST(request: NextRequest) {
