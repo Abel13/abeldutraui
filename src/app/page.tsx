@@ -1,5 +1,6 @@
 import Image from "next/image";
-import HeroSection from "./components/atoms/Hero";
+import HeroSection from "./components/sections/Hero";
+import FeaturedProjects from "./components/sections/FeaturedProjects";
 
 export default function Home() {
   const socialLinks = [
@@ -33,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="bg-[linear-gradient(145deg,#5B0A91,#8B0A91,#E43F5A)] flex flex-col min-h-screen font-[var(--font-sans)]  text-[var(--color-foreground)]">
-      <header className="flex w-screen bg-white px-10 justify-between gap-5 p-4 shadow-2xl">
+      <header className="flex bg-white px-10 justify-between gap-5 p-4 shadow-2xl">
         <div className="flex items-center gap-2">
           <Image
             src="/assets/images/logo.png"
@@ -70,10 +71,11 @@ export default function Home() {
 
       <main className="flex flex-col flex-1">
         <HeroSection />
+        <FeaturedProjects />
       </main>
 
       <footer className="py-6 text-sm text-center text-white">
-        <p>{`Made with {} and ❤️ by Abel Dutra`}</p>
+        <p>{`Made with {} and ❤️ by Abel`}</p>
       </footer>
     </div>
   );

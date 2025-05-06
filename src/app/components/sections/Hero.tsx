@@ -19,12 +19,12 @@ export default function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-          {/* <Link
+          <Link
             href="#projects"
             className="bg-rose-500 hover:bg-rose-600 text-white py-3 px-6 rounded-lg text-sm font-semibold shadow-md"
           >
             View Projects
-          </Link> */}
+          </Link>
           <Link
             href="/downloads/resume_EN 2025.pdf"
             target="_blank"
