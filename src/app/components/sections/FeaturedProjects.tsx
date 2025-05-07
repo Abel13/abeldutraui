@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
                 </span>
               ))}
             </div>
-            <div className="flex gap-4 mt-auto">
+            <div className="flex flex-1 items-baseline flex-wrap gap-4 mt-auto">
               {project.demo && (
                 <Link
                   href={project.demo}
