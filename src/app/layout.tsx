@@ -1,6 +1,7 @@
 import { inter, poppins } from "./fonts";
 import "./globals.css";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Abel Dutra UI",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
