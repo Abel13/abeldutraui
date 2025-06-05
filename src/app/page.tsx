@@ -6,6 +6,11 @@ export default function Home() {
   const socialLinks = [
     { href: "https://github.com/Abel13", img: "github.png", label: "GitHub" },
     {
+      href: "https://discord.gg/Y5HuYuk",
+      img: "discord.png",
+      label: "Discord",
+    },
+    {
       href: "https://www.youtube.com/@AbelDutraUI",
       img: "youtube.png",
       label: "YouTube",
