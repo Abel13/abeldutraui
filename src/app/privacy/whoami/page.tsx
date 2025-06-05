@@ -115,10 +115,10 @@ const PrivacyPolicy = () => {
         <p>
           Email:{" "}
           <a
-            href="mailto:suporte@seujogo.com"
+            href="mailto:contact@abeldutraui.me"
             className="text-blue-500 underline"
           >
-            suporte@seujogo.com
+            contact@abeldutraui.me
           </a>
         </p>
       </section>
