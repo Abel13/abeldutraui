@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroSection from "./components/sections/Hero";
 import FeaturedProjects from "./components/sections/FeaturedProjects";
+import Experiences from "./components/sections/Experiences";
 
 export default function Home() {
   const socialLinks = [
@@ -48,7 +49,7 @@ export default function Home() {
             height={45}
             priority
           />
-          <span className="text-lg font-semibold tracking-tight">
+          <span className="text-lg font-semibold tracking-tight hidden sm:inline">
             ABEL DUTRA UI
           </span>
         </div>
@@ -77,6 +78,7 @@ export default function Home() {
       <main className="flex flex-col flex-1">
         <HeroSection />
         <FeaturedProjects />
+        <Experiences />
       </main>
 
       <footer className="py-6 text-sm text-center text-white">
