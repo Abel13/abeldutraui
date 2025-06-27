@@ -35,7 +35,9 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased min-h-screen bg-white text-black dark:bg-zinc-900 dark:text-white`}
+      >
         {children}
         <SpeedInsights />
         <Analytics />
