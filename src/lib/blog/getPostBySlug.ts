@@ -13,7 +13,7 @@ export interface BlogPost {
     date: string;
     excerpt: string;
     coverImage?: string;
-    tags?: string[];
+    tags: string[];
     draft?: boolean;
     readingTime: string;
   };

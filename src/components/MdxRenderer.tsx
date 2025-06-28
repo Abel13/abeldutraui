@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { MDXProvider, useMDXComponents } from "@mdx-js/react";
 import * as runtime from "react/jsx-runtime";
 import { compileSync } from "@mdx-js/mdx";
 import { Fragment } from "react";

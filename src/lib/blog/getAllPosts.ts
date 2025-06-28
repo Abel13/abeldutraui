@@ -42,7 +42,7 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
             title: data.title,
             date: data.date,
             excerpt: data.excerpt,
-            coverImage: data.coverImage || "",
+            coverImage: `/images/blog/${data.key}/${data.coverImage}`,
             tags: data.tags || [],
             draft: data.draft ?? false,
             readingTime: readingStats.text,

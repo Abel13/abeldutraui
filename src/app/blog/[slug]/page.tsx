@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/blog/getPostBySlug";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import "@/app/blog/mdx.css";
 import Image from "next/image";
 import MdxRenderer from "@/components/MdxRenderer";
@@ -34,6 +33,11 @@ export default async function BlogPostPage({
         />
         <MdxRenderer code={content} />
       </div>
+      {frontmatter.tags.map((i) => (
+        <span key={i} className="mdx-content">
+          {i}
+        </span>
+      ))}
     </article>
   );
 }
