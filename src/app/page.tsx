@@ -1,7 +1,7 @@
 import Image from "next/image";
-import HeroSection from "./components/sections/Hero";
-import FeaturedProjects from "./components/sections/FeaturedProjects";
-import Experiences from "./components/sections/Experiences";
+import HeroSection from "@/components/sections/Hero";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Experiences from "@/components/sections/Experiences";
 
 export default function Home() {
   const socialLinks = [
