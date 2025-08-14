@@ -8,7 +8,7 @@ const projects = [
       "A casual game where players try to guess as many words as possible through clues given by friends.",
     tech: ["React Native", "Expo", "Expo Router", "Zustand"],
     image: "/assets/images/whoami.png",
-    downloads: "+1K downloads",
+    downloads: "+4K downloads",
     playStore:
       "https://play.google.com/store/apps/details?id=com.abelb13.whoami",
     appStore: "https://apps.apple.com/us/app/quem-sou-eu-quiz/id6740008221",
@@ -27,6 +27,7 @@ const projects = [
       "Expo Location",
       "GitHub Actions",
       "Expo Application Services",
+      "Supabase",
     ],
     image: "/assets/images/tatuh.png",
     playStore:
@@ -52,28 +53,44 @@ const projects = [
     appStore: "https://apps.apple.com/us/app/sheep-finance/id1643414738",
     demo: "https://app.sheepfinance.com",
   },
+  {
+    title: "Super Brick – Retro-Inspired Arcade Collection",
+    description:
+      "Brick Game is a retro-style mobile platform built with React Native, featuring modular mini-games like Tetris and Snake. Designed with Clean Architecture and Expo Router, it offers smooth controls and pixel-perfect visuals.",
+    tech: [
+      "React Native",
+      "Expo",
+      "Expo Router",
+      "Zustand",
+      "Clean Architecture",
+    ],
+    image: "/assets/images/brickgame.png",
+    playStore: "",
+    appStore: "",
+    demo: "",
+  },
 ];
 
 export default function FeaturedProjects() {
   return (
     <section className="py-20 px-6 md:px-12">
       <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-12 text-white">
-        Featured Projects
+        Personal Projects
       </h2>
 
-      <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
         {projects.map((project) => (
           <div
             key={project.title}
             className="rounded-xl bg-white text-foreground shadow-xl p-6 flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300"
           >
-            <div className="flex w-full bg-[linear-gradient(145deg,#5B0A91,#8B0A91,#AB0A91)] rounded-lg p-4 justify-center">
+            <div className="flex w-full bg-[linear-gradient(145deg,#5B0A91,#8B0A91,#AB0A91)] rounded-xl p-4 justify-center">
               <Image
                 src={project.image}
                 alt={project.title}
                 width={300}
                 height={300}
-                className="rounded-full object-cover mb-4 border-2 bg-white"
+                className="rounded-4xl object-cover mb-4 border-2 bg-white"
               />
             </div>
             <div className="flex items-center justify-between">
@@ -89,7 +106,10 @@ export default function FeaturedProjects() {
             <p className="flex text-sm mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 text-xs mb-4">
               {project.tech.map((tech) => (
-                <span key={tech} className="bg-white/20 px-2 py-1 rounded-full">
+                <span
+                  key={tech}
+                  className="bg-purple-500/20 px-2 py-1 rounded-full"
+                >
                   {tech}
                 </span>
               ))}
