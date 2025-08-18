@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# creative
+/brainstorm
+
 # next.js
 /.next/
 /out/
