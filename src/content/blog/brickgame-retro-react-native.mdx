@@ -1,0 +1,184 @@
+---
+key: "30WktQRJ"
+title: "From Nostalgia to Innovation: Building a Modern Brick Game in React Native"
+excerpt: "How I recreated classic minigames like Tetris, Snake and Pong in React Native using a pixel-perfect engine and clean UI/UX."
+date: 2025-07-10
+author: Abel
+tags:
+  ["react-native", "games", "retro", "expo", "pixel-art", "mobile development"]
+coverImage: "cover.png"
+draft: false
+---
+
+Everything started with a casual game of Tetris. Interrupted by ads, I realized how far modern versions strayed from the original Brick Game charm. That moment sparked an idea: to build a clean, modern, **ad-free** version of the Brick Game using React Native — both as a tribute to retro gaming and a way to strengthen my frontend skills.
+
+<img
+  src="/images/blog/30WktQRJ/mockup.png"
+  alt="Brick Game Mockup"
+  style={{
+    width: 200,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+    padding: 10,
+  }}
+/>
+
+---
+
+## 🎮 The Classic Inspiration
+
+I grew up playing those "9999-in-1" handheld minigames with my siblings — racing games, tanks, snake, and of course, Tetris. These simple pixel games sparked my early passion for design and tech.
+
+<img
+  src="/images/blog/30WktQRJ/minigame-console.webp"
+  alt="Original Minigame Console"
+  style={{
+    width: 300,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+    padding: 10,
+  }}
+/>
+---
+
+## 🧱 Why React Native?
+
+React Native was the perfect playground:
+
+- Cross-platform (Android + iOS)
+- Pixel grid rendering via custom game loop
+- Scalable architecture with **Clean Code principles**
+- Built with **Expo**, **Zustand**, and **Expo Router**
+
+I applied atomic design and isolated each game engine for modular expansion.
+
+<img
+  src="/images/blog/30WktQRJ/architecture.png"
+  alt="Architecture Diagram"
+  style={{
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+  }}
+/>
+---
+
+## 🕹️ Games Included
+
+So far, I’ve implemented:
+
+- 🟪 **Tetris**
+- 🐍 **Snake**
+- 🏓 **Pong** (with CPU AI and vertical layout)
+
+Each game is built with its own engine and logic, rendered over a shared pixel-based grid.
+
+<img
+  src="/images/blog/30WktQRJ/games.jpg"
+  alt="Implemented games"
+  style={{
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+    padding: 10,
+  }}
+/>
+---
+
+## 📲 Designed for Mobile
+
+Despite being pixelated, the game adapts smoothly to any screen size. The layout replicates the original minigame feeling while remaining responsive and touch-friendly.
+
+<img
+  src="/images/blog/30WktQRJ/control-layout.png"
+  alt="Control Pad and Game Layout"
+  style={{
+    width: "100%",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+    padding: 10,
+  }}
+/>
+---
+
+## 🎨 Nostalgia Meets Clean UI
+
+I carefully balanced the retro look with modern usability:
+
+- 10x20 grid with authentic matrix look
+- Vibrating and audio feedback
+- Font inspired by original consoles
+- Clean borders and spacing for readability
+
+<img
+  src="/images/blog/30WktQRJ/game-screen.png"
+  alt="Game Screen"
+  style={{
+    width: "50%",
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "#a1a1a1",
+    padding: 10,
+  }}
+/>
+
+---
+
+## 🔁 Game Loop & Logic
+
+I created a simple game loop using `setInterval` (Mobile), controlling update rate per game. Each frame, the engine updates state and triggers a re-render of the pixel matrix.
+
+---
+
+## 🔊 Sound System
+
+I mapped nostalgic SFX like bounce, move, game over, and victory — with constraints to avoid overlapping sounds or rapid spam. All sounds are defined statically and loaded using Expo Audio.
+
+![Sound Config Diagram](/images/blog/30WktQRJ/sound-system.png)
+
+---
+
+## 🧠 Clean Architecture
+
+Each game lives in a dedicated folder with:
+
+- `useEngine.ts` for core logic
+- `useControls.ts` for movement
+- `constants.ts` and `types.ts` for maintainability
+- Screens and HUDs follow atomic design: atoms → molecules → templates
+
+New games can be plugged in with minimal changes.
+
+---
+
+## 💡 Lessons Learned
+
+- Building a pixel engine requires performance awareness
+- Game UX needs constant testing across screen sizes
+- A clean codebase makes future experiments much easier
+- Retro games can still teach us a lot about good design
+
+---
+
+## 🚀 What's Next
+
+Soon, the project will be available on the **Play Store (Beta)**. I also plan to include:
+
+- 🎯 Brick shooter
+- 🐤 Tamagotchi-style pet mode
+- 🧠 “Pi Challenge” (Tetris based on π digit sequence)
+- 🛡️ Tank battle and car racing
+- 🧩 Multiplayer and leaderboards
+
+---
+
+## 📌 Conclusion
+
+This project blends childhood nostalgia with modern tools. Whether you're into retro gaming or just enjoy clean code and clever UI, the Brick Game is a joyful throwback with modern polish.
+
+> Want to try it or contribute? Follow my updates on [GitHub](https://github.com/abeldutra) or connect with me on [LinkedIn](https://www.linkedin.com/in/abeldutra/)
