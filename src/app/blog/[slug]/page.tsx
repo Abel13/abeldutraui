@@ -3,6 +3,7 @@ import { getPostBySlug } from "@/lib/blog/getPostBySlug";
 import "@/app/blog/mdx.css";
 import Image from "next/image";
 import MdxRenderer from "@/components/MdxRenderer";
+import { formatDate } from "@/lib/utils/date";
 
 export default async function BlogPostPage({
   params,
@@ -40,12 +41,4 @@ export default async function BlogPostPage({
       ))}
     </article>
   );
-}
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
 }

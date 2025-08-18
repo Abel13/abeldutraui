@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog/getAllPosts";
 import "@/app/blog/mdx.css";
 import Image from "next/image";
+import { formatDate } from "@/lib/utils/date";
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
@@ -65,12 +66,4 @@ export default async function BlogPage() {
       </main>
     </div>
   );
-}
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
 }
