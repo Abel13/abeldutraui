@@ -8,7 +8,7 @@ const projects = [
       "A casual game where players try to guess as many words as possible through clues given by friends.",
     tech: ["React Native", "Expo", "Expo Router", "Zustand"],
     image: "/assets/images/whoami.png",
-    downloads: "+4K downloads",
+    downloads: "+5K downloads",
     playStore:
       "https://play.google.com/store/apps/details?id=com.abelb13.whoami",
     appStore: "https://apps.apple.com/us/app/quem-sou-eu-quiz/id6740008221",
