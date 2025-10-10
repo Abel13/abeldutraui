@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroSection from "@/components/sections/Hero";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Experiences from "@/components/sections/Experiences";
+import TechnologyTimeline from "@/components/sections/TechnologyExperiences";
 
 export default function Home() {
   const socialLinks = [
@@ -78,6 +79,7 @@ export default function Home() {
       <main className="flex flex-col flex-1">
         <HeroSection />
         <FeaturedProjects />
+        <TechnologyTimeline />
         <Experiences />
       </main>
 

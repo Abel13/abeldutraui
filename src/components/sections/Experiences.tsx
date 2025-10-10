@@ -185,9 +185,9 @@ const experiences = [
 
 export default function Experiences() {
   return (
-    <section id="experiences" className="pb-20 pt-4 px-6 md:px-12">
+    <section id="experiences" className="pb-20 pt-20 px-6 md:px-12">
       <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-12 text-white">
-        Experiences
+        Professional Experiences
       </h2>
 
       <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
