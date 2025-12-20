@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-const EMAIL_USER = process.env.EMAIL_USER;
-const EMAIL_PASS = process.env.EMAIL_PASS;
-const SUPPORT_EMAIL = "contac@abeldutraui.me";
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const SUPPORT_EMAIL = "contact@abeldutraui.me";
+const FROM_EMAIL = process.env.FROM_EMAIL || "onboarding@resend.dev";
 
-if (!EMAIL_USER || !EMAIL_PASS) {
-  throw new Error("As variáveis de ambiente não estão configuradas.");
+if (!RESEND_API_KEY) {
+  throw new Error(
+    "A variável de ambiente RESEND_API_KEY não está configurada."
+  );
 }
+
+const resend = new Resend(RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,26 +25,32 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Configurar o transporte do nodemailer
-    const transporter = nodemailer.createTransport({
-      service: "gmail", // Use o serviço de e-mail necessário
-      auth: {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS,
-      },
-    });
-
-    // Enviar e-mail
-    const mailOptions = {
-      from: email,
+    // Enviar e-mail usando Resend
+    const { data, error } = await resend.emails.send({
+      from: FROM_EMAIL,
       to: SUPPORT_EMAIL,
+      replyTo: email,
       subject: `Suporte: Mensagem de ${name}`,
       text: message,
-    };
+      html: `<p>${message.replace(
+        /\n/g,
+        "<br>"
+      )}</p><p><strong>De:</strong> ${name} (${email})</p>`,
+    });
 
-    const response = await transporter.sendMail(mailOptions);
+    if (error) {
+      console.error("Erro ao enviar e-mail:", error);
+      return NextResponse.json(
+        {
+          error: `Erro ao enviar e-mail, tente novamente mais tarde. ${JSON.stringify(
+            error
+          )}`,
+        },
+        { status: 500 }
+      );
+    }
 
-    console.log("E-mail enviado com sucesso:", response);
+    console.log("E-mail enviado com sucesso:", data);
 
     return NextResponse.json({ success: "E-mail enviado com sucesso!" });
   } catch (error) {
