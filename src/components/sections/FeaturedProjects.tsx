@@ -93,7 +93,7 @@ export default function FeaturedProjects() {
                 className="rounded-4xl object-cover mb-4 border-2 bg-white"
               />
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <h3 className="mt-5 text-xl font-semibold mb-2">
                 {project.title}
               </h3>
@@ -103,7 +103,7 @@ export default function FeaturedProjects() {
                 </span>
               )}
             </div>
-            <p className="flex text-sm mb-4">{project.description}</p>
+            <p className="flex text-sm mb-6">{project.description}</p>
             <div className="flex flex-wrap gap-2 text-xs mb-4">
               {project.tech.map((tech) => (
                 <span
