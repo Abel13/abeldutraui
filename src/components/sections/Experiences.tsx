@@ -1,10 +1,68 @@
 import Image from "next/image";
 
-const experiences = [
+interface BaseProject {
+  logo: string;
+  name: string;
+}
+
+interface WebsiteProject extends BaseProject {
+  website: string;
+}
+
+interface AppStoreProject extends BaseProject {
+  playStore: string;
+  appStore: string;
+  downloads?: string;
+}
+
+type Project = WebsiteProject | AppStoreProject;
+
+interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string[];
+  tech: string[];
+  projects?: Project[];
+}
+
+interface Client {
+  name: string;
+  logo: string;
+  website?: string;
+}
+
+const experiences: Experience[] = [
+  {
+    company: "Tata Consultancy Services",
+    role: "Mobile Architect",
+    period: "Nov 2025 – Present",
+    description: [
+      "Setup and manage mobile architectures.",
+      "Focus on performance, scalability, agile development and clean architecture.",
+    ],
+    tech: [
+      "NextJS",
+      "PWA",
+      "Zustand",
+      "Tailwind",
+      "React Testing Library",
+      "Vitest",
+      "AWS S3",
+      "AWS EC2",
+    ],
+    projects: [
+      {
+        logo: "/assets/experiences/jaj.png",
+        name: "J&J e-POD",
+        website: "https://www.jnj.com/",
+      },
+    ],
+  },
   {
     company: "Petros",
     role: "Senior React Native Developer",
-    period: "Dec 2023 – Present",
+    period: "Dec 2023 – Nov 2025",
     description: [
       "Maintenance and evolution of the Petros app.",
       "Focus on performance, scalability, and new feature development.",
@@ -14,6 +72,7 @@ const experiences = [
       "Expo",
       "Zustand",
       "React Testing Library",
+      "React Query",
       "Firebase Analytics",
       "Firebase Cloud Messaging",
       "Azure DevOps",
@@ -88,30 +147,13 @@ const experiences = [
     ],
   },
   {
-    company: "Lexis Nexis – via Luby Software",
-    role: "React Native Developer",
-    period: "May 2020 – Dec 2020",
-    description: [
-      "Development of responsive mobile UIs with React Native.",
-      "Migration from MobX to Redux + Saga.",
-      "Testing with Jest and Enzyme.",
-    ],
-    tech: [
-      "React Native",
-      "Expo",
-      "Redux",
-      "MobX",
-      "Jest",
-      "Firebase",
-      "SCRUM",
-    ],
-  },
-  {
     company: "Luby Software",
     role: "Full Stack Developer",
     period: "Jul 2019 – Dec 2020",
     description: [
       "Worked on multiple projects using React Native, NodeJS, and ReactJS.",
+      "Development of responsive mobile UIs with React Native.",
+      "Migration from MobX to Redux + Saga.",
     ],
     tech: [
       "React Native",
@@ -121,6 +163,9 @@ const experiences = [
       "Firebase",
       "AWS",
       "SCRUM",
+      "Redux",
+      "MobX",
+      "Jest",
     ],
   },
   {
@@ -183,6 +228,39 @@ const experiences = [
   },
 ];
 
+const clients: Client[] = [
+  {
+    name: "Johnson & Johnson",
+    logo: "/assets/experiences/jaj.png",
+    website: "https://www.jnj.com/",
+  },
+  {
+    name: "Petros",
+    logo: "/assets/experiences/petros.webp",
+    website: "https://www.petros.com.br/",
+  },
+  {
+    name: "Einstein",
+    logo: "/assets/experiences/logo-einstein.png",
+    website: "https://www.einstein.br/n/",
+  },
+  {
+    name: "Mambo",
+    logo: "/assets/experiences/mambo.webp",
+    website: "https://www.mambo.com.br/",
+  },
+  {
+    name: "MEI Fácil",
+    logo: "/assets/experiences/meifacil.webp",
+    website: "https://neon.com.br/mei-facil",
+  },
+  {
+    name: "Lexis Nexis",
+    logo: "/assets/experiences/lexis-nexis.jpg",
+    website: "https://www.lexisnexis.com/pt-br",
+  },
+];
+
 export default function Experiences() {
   return (
     <section id="experiences" className="pb-20 pt-20 px-6 md:px-12">
@@ -241,7 +319,7 @@ export default function Experiences() {
                         {project.name}
                       </p>
 
-                      {project.downloads && (
+                      {"downloads" in project && project.downloads && (
                         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg py-1 px-3">
                           <p className="text-xs text-purple-200">
                             {project.downloads}
@@ -250,7 +328,7 @@ export default function Experiences() {
                       )}
 
                       <div className="flex gap-2 mt-3 flex-wrap justify-center">
-                        {project.playStore && (
+                        {"playStore" in project && (
                           <a
                             href={project.playStore}
                             target="_blank"
@@ -259,13 +337,22 @@ export default function Experiences() {
                             Play Store
                           </a>
                         )}
-                        {project.appStore && (
+                        {"appStore" in project && (
                           <a
                             href={project.appStore}
                             target="_blank"
                             className="text-xs font-medium bg-black hover:bg-neutral-800 text-white px-3 py-1 rounded-lg transition"
                           >
                             App Store
+                          </a>
+                        )}
+                        {"website" in project && (
+                          <a
+                            href={project.website}
+                            target="_blank"
+                            className="text-xs font-medium bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-lg transition"
+                          >
+                            Website
                           </a>
                         )}
                       </div>
@@ -276,6 +363,47 @@ export default function Experiences() {
             )}
           </div>
         ))}
+      </div>
+
+      <div className="mt-20">
+        <h2 className="text-3xl sm:text-4xl font-heading font-semibold mb-12 text-white">
+          Clients
+        </h2>
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex gap-6 p-4 min-w-max">
+            {clients.map((client) => (
+              <div
+                key={client.name}
+                className="rounded-xl bg-white/70 backdrop-blur-md border border-white/90 p-6 flex items-center justify-center hover:scale-105 transition-transform duration-300 flex-shrink-0 w-40 h-40"
+              >
+                {client.website ? (
+                  <a
+                    href={client.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full h-full flex items-center justify-center"
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={120}
+                      height={120}
+                      className="w-full h-auto max-h-20 object-contain"
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={120}
+                    className="w-full h-auto max-h-20 object-contain"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
