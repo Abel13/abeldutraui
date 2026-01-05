@@ -54,7 +54,7 @@ const experiences: Experience[] = [
     projects: [
       {
         logo: "/assets/experiences/jaj.png",
-        name: "J&J e-POD",
+        name: "e-POD Moonshot",
         website: "https://www.jnj.com/",
       },
     ],
