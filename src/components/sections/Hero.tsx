@@ -26,7 +26,7 @@ export default function HeroSection() {
             See Experiences
           </Link>
           <Link
-            href="/downloads/resume_EN 2025.pdf"
+            href="/downloads/resume_EN 2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             download

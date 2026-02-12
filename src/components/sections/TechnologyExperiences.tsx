@@ -53,6 +53,12 @@ const TechTimeline: React.FC = () => {
       ],
     },
     {
+      id: "nextjs",
+      name: "Next JS",
+      color: "bg-black",
+      periods: [{ start: "06/2022", end: "present" }],
+    },
+    {
       id: "redux",
       name: "Redux",
       color: "bg-emerald-500",
@@ -112,6 +118,7 @@ const TechTimeline: React.FC = () => {
     "2023",
     "2024",
     "2025",
+    "2026",
   ];
 
   const getActiveTech = () => {
@@ -255,7 +262,7 @@ const TechTimeline: React.FC = () => {
                             // Check if this year is within any experience period
                             const isInPeriod = tech.periods.some((period) => {
                               const startYear = parseInt(
-                                period.start.split("/")[1]
+                                period.start.split("/")[1],
                               );
                               const endYear =
                                 period.end === "present"
