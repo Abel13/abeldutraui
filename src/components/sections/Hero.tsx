@@ -25,15 +25,14 @@ export default function HeroSection() {
           >
             See Experiences
           </Link>
-          <Link
-            href="/downloads/resume_EN 2026.pdf"
+          <a
+            href="https://1drv.ms/b/c/d3c49f8dbdc2592e/IQBSPISrrkCBTIR-qjQ2pKDsATaNOc7oWNvhi2xg4b6Di8M?e=MRidmu"
             target="_blank"
             rel="noopener noreferrer"
-            download
             className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg text-sm font-semibold shadow-md"
           >
             Download CV
-          </Link>
+          </a>
         </div>
       </div>
 
